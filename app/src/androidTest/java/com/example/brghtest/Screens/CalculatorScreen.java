@@ -83,6 +83,4 @@ public class CalculatorScreen {
         buttonEqual.perform(click());
         resultTextView.check(matches(withText("bleh")));
     }
-
-
 }
