@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:id="@+id/imageScrollView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginTop="130sp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image1"
+                        android:layout_width="200dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="80dp"
+                        android:src="@drawable/image_bug_feature" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image2"
+                        android:layout_width="200dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/image_code_works" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image3"
+                        android:layout_width="200dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/image_error_message" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image4"
+                        android:layout_width="200dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/image_share_machine"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image5"
+                        android:layout_width="200dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/image_test_production"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image6"
+                        android:layout_width="200dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/image_good_testing"
+                        android:layout_marginBottom="20dp"/>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
