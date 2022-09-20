@@ -63,7 +63,7 @@ public class CalculatorScreen {
         buttonSeven.perform(click());
         buttonMultiply.perform(click());
         buttonSix.perform(click());
-        buttonMultiply.perform(click());
+        buttonEqual.perform(click());
     }
 
     public void SumWithAssertionPositive() {
