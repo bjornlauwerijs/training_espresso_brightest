@@ -12,12 +12,13 @@ import com.example.brghtest.R;
 
 //Dit is de POM voor het menu
 public class MenuScreen {
-
     ViewInteraction menuItemWhatDoYouMeme = onView(withText("What do you meme?"));
-    ViewInteraction menuItemTools = onView(withText("Tools"));
     ViewInteraction menuSlideshow = onView(withText("Slideshow"));
 
     public void OpenWhatDoyouMeme(){
         menuItemWhatDoYouMeme.perform(click());
+    }
+    public void OpenSlideShow(){
+        menuSlideshow.perform(click());
     }
 }

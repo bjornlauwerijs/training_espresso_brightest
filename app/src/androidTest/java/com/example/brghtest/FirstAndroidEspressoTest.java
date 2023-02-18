@@ -44,13 +44,6 @@ public class FirstAndroidEspressoTest {
         loginButton.perform(click());
     }
 
-    //Gebruiken van keyfunctions (LoginScreen aanmaken en daar de functie schrijven)
-    @Test
-    public void KeyFunctionTestLogin() {
-        LoginScreen loginScreen = new LoginScreen();
-        loginScreen.login("admin","admin");
-    }
-
     //Eerste snelle test calculator
     //inloggen en dan calc test uitvoeren
     @Test
@@ -74,6 +67,22 @@ public class FirstAndroidEspressoTest {
 
         ViewInteraction resultTextView = onView(withId(R.id.resultTextView));
         resultTextView.perform(click());
+    }
+
+    //Gebruiken van keyfunctions (LoginScreen aanmaken en daar de functie schrijven)
+    @Test
+    public void KeyFunctionTestLogin() {
+        LoginScreen loginScreen = new LoginScreen();
+        loginScreen.login("admin","admin");
+    }
+
+    @Test
+    public void OpenMenu() {
+        LoginScreen loginScreen = new LoginScreen();
+        loginScreen.login("admin","admin");
+
+        ViewInteraction menuButton = onView(withContentDescription("Open navigation drawer"));
+        menuButton.perform(click());
     }
 
     //Gebruiken van keyfunctions (LoginScreen aanmaken en daar de functie schrijven)
@@ -132,15 +141,6 @@ public class FirstAndroidEspressoTest {
     }
 
     @Test
-    public void ClickhamburgerMenu() {
-        LoginScreen loginScreen = new LoginScreen();
-        loginScreen.login("admin","admin");
-
-        ViewInteraction menuButton = onView(withContentDescription("Open navigation drawer"));
-        menuButton.perform(click());
-    }
-
-    @Test
     public void OpenWhatDoYouMeme() {
         LoginScreen loginScreen = new LoginScreen();
         loginScreen.login("admin","admin");
@@ -150,6 +150,17 @@ public class FirstAndroidEspressoTest {
 
         MenuScreen menuScreen = new MenuScreen();
         menuScreen.OpenWhatDoyouMeme();
+    }
+    @Test
+    public void OpenSlideShow() {
+        LoginScreen loginScreen = new LoginScreen();
+        loginScreen.login("admin","admin");
+
+        ViewInteraction menuButton = onView(withContentDescription("Open navigation drawer"));
+        menuButton.perform(click());
+
+        MenuScreen menuScreen = new MenuScreen();
+        menuScreen.OpenSlideShow();
     }
 
     @Test
