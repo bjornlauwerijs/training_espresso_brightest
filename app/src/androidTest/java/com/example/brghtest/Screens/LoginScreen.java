@@ -2,6 +2,7 @@ package com.example.brghtest.Screens;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
@@ -18,8 +19,8 @@ public class LoginScreen {
 
     public void login(String username, String password){
 
-        emailtextField.perform(typeText(username));
-        passwordtextField.perform(typeText(password));
+        emailtextField.perform(typeText(username)).perform(closeSoftKeyboard());
+        passwordtextField.perform(typeText(password)).perform(closeSoftKeyboard());
         loginButton.perform(click());
     }
 }
