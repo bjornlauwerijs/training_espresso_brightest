@@ -29,11 +29,10 @@ public class FirstAndroidEspressoTest {
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityRule = new ActivityScenarioRule(MainActivity.class);
     private MainActivity mainActivity;
-
-    //Eerste snelle test
+    // Assignment 1 - Login
     @Test
     public void loginTest() {
-        //id kan je ophalen in activity_main.xml
+        // id kan je ophalen in activity_main.xml
         ViewInteraction emailtextField = onView(withId(R.id.usernameTextField)).perform(closeSoftKeyboard());
         emailtextField.perform(typeText("admin"));
 
@@ -43,12 +42,17 @@ public class FirstAndroidEspressoTest {
         ViewInteraction loginButton = onView(withId(R.id.loginButton)).perform(closeSoftKeyboard());
         loginButton.perform(click());
     }
-
-    //Eerste snelle test calculator
-    //inloggen en dan calc test uitvoeren
+    // Assignment 2 - Create keyfunction "login" in Screens/LoginScreen
+    // Gebruiken van keyfunctions (LoginScreen aanmaken en daar de functie schrijven)
+    @Test
+    public void KeyFunctionTestLogin() {
+        LoginScreen loginScreen = new LoginScreen();
+        loginScreen.login("admin","admin");
+    }
+    // Assignment 3 - Perform calculation
     @Test
     public void calculatorTest() {
-        //inloggen
+        // Login
         LoginScreen loginScreen = new LoginScreen();
         loginScreen.login("admin","admin");
 
@@ -68,14 +72,6 @@ public class FirstAndroidEspressoTest {
         ViewInteraction resultTextView = onView(withId(R.id.resultTextView));
         resultTextView.perform(click());
     }
-
-    //Gebruiken van keyfunctions (LoginScreen aanmaken en daar de functie schrijven)
-    @Test
-    public void KeyFunctionTestLogin() {
-        LoginScreen loginScreen = new LoginScreen();
-        loginScreen.login("admin","admin");
-    }
-
     @Test
     public void OpenMenu() {
         LoginScreen loginScreen = new LoginScreen();
@@ -84,7 +80,6 @@ public class FirstAndroidEspressoTest {
         ViewInteraction menuButton = onView(withContentDescription("Open navigation drawer"));
         menuButton.perform(click());
     }
-
     //Gebruiken van keyfunctions (LoginScreen aanmaken en daar de functie schrijven)
     @Test
     public void RandomSubtractTest() {
@@ -94,7 +89,6 @@ public class FirstAndroidEspressoTest {
         CalculatorScreen calculatorScreen = new CalculatorScreen();
         calculatorScreen.RandomSubtract();
     }
-
     @Test
     public void RandomSumTest() {
         LoginScreen loginScreen = new LoginScreen();
@@ -103,7 +97,6 @@ public class FirstAndroidEspressoTest {
         CalculatorScreen calculatorScreen = new CalculatorScreen();
         calculatorScreen.RandomSum();
     }
-
     @Test
     public void RandomMultiplyTest() {
         LoginScreen loginScreen = new LoginScreen();
@@ -112,7 +105,6 @@ public class FirstAndroidEspressoTest {
         CalculatorScreen calculatorScreen = new CalculatorScreen();
         calculatorScreen.RandomMultiply();
     }
-
     @Test
     public void RandomDivideTest() {
         LoginScreen loginScreen = new LoginScreen();
@@ -121,7 +113,6 @@ public class FirstAndroidEspressoTest {
         CalculatorScreen calculatorScreen = new CalculatorScreen();
         calculatorScreen.RandomDivide();
     }
-
     @Test
     public void SumWithAssertionPositiveTest() {
         LoginScreen loginScreen = new LoginScreen();
@@ -130,7 +121,6 @@ public class FirstAndroidEspressoTest {
         CalculatorScreen calculatorScreen = new CalculatorScreen();
         calculatorScreen.SumWithAssertionPositive();
     }
-
     @Test
     public void SumWithAssertionNegativeTest() {
         LoginScreen loginScreen = new LoginScreen();
@@ -139,7 +129,6 @@ public class FirstAndroidEspressoTest {
         CalculatorScreen calculatorScreen = new CalculatorScreen();
         calculatorScreen.SumWithAssertionNegative();
     }
-
     @Test
     public void OpenWhatDoYouMeme() {
         LoginScreen loginScreen = new LoginScreen();
@@ -162,7 +151,6 @@ public class FirstAndroidEspressoTest {
         MenuScreen menuScreen = new MenuScreen();
         menuScreen.OpenSlideShow();
     }
-
     @Test
     public void ScrollWhatDoYouMeme() {
         LoginScreen loginScreen = new LoginScreen();

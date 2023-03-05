@@ -81,6 +81,6 @@ public class CalculatorScreen {
         buttonAdd.perform(click());
         buttonSix.perform(click());
         buttonEqual.perform(click());
-        resultTextView.check(matches(withText("bleh")));
+        resultTextView.check(matches(withText("ThisWillThrowError")));
     }
 }
