@@ -29,26 +29,28 @@ public class FirstAndroidEspressoTest {
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityRule = new ActivityScenarioRule(MainActivity.class);
     private MainActivity mainActivity;
+
     // Assignment 1 - Login
     @Test
     public void loginTest() {
         // id kan je ophalen in activity_main.xml
-        ViewInteraction emailtextField = onView(withId(R.id.usernameTextField)).perform(closeSoftKeyboard());
-        emailtextField.perform(typeText("admin"));
+        ViewInteraction emailtextField = onView(withId(R.id.usernameTextField));
+        emailtextField.perform(typeText("admin")).perform(closeSoftKeyboard());
 
-        ViewInteraction passwordtextField = onView(withId(R.id.passwordTextField)).perform(closeSoftKeyboard());
-        passwordtextField.perform(typeText("admin"));
+        ViewInteraction passwordtextField = onView(withId(R.id.passwordTextField));
+        passwordtextField.perform(typeText("admin")).perform(closeSoftKeyboard());
 
-        ViewInteraction loginButton = onView(withId(R.id.loginButton)).perform(closeSoftKeyboard());
+        ViewInteraction loginButton = onView(withId(R.id.loginButton));
         loginButton.perform(click());
     }
+
     // Assignment 2 - Create keyfunction "login" in Screens/LoginScreen
-    // Gebruiken van keyfunctions (LoginScreen aanmaken en daar de functie schrijven)
     @Test
     public void KeyFunctionTestLogin() {
         LoginScreen loginScreen = new LoginScreen();
         loginScreen.login("admin","admin");
     }
+
     // Assignment 3 - Perform calculation
     @Test
     public void calculatorTest() {
@@ -72,15 +74,8 @@ public class FirstAndroidEspressoTest {
         ViewInteraction resultTextView = onView(withId(R.id.resultTextView));
         resultTextView.perform(click());
     }
-    @Test
-    public void OpenMenu() {
-        LoginScreen loginScreen = new LoginScreen();
-        loginScreen.login("admin","admin");
 
-        ViewInteraction menuButton = onView(withContentDescription("Open navigation drawer"));
-        menuButton.perform(click());
-    }
-    //Gebruiken van keyfunctions (LoginScreen aanmaken en daar de functie schrijven)
+    // Assignment 4 - Transfer everything to CalculatorScreen
     @Test
     public void RandomSubtractTest() {
         LoginScreen loginScreen = new LoginScreen();
@@ -89,30 +84,8 @@ public class FirstAndroidEspressoTest {
         CalculatorScreen calculatorScreen = new CalculatorScreen();
         calculatorScreen.RandomSubtract();
     }
-    @Test
-    public void RandomSumTest() {
-        LoginScreen loginScreen = new LoginScreen();
-        loginScreen.login("admin","admin");
 
-        CalculatorScreen calculatorScreen = new CalculatorScreen();
-        calculatorScreen.RandomSum();
-    }
-    @Test
-    public void RandomMultiplyTest() {
-        LoginScreen loginScreen = new LoginScreen();
-        loginScreen.login("admin","admin");
-
-        CalculatorScreen calculatorScreen = new CalculatorScreen();
-        calculatorScreen.RandomMultiply();
-    }
-    @Test
-    public void RandomDivideTest() {
-        LoginScreen loginScreen = new LoginScreen();
-        loginScreen.login("admin","admin");
-
-        CalculatorScreen calculatorScreen = new CalculatorScreen();
-        calculatorScreen.RandomDivide();
-    }
+    // Assignment 5 - Do an assertion on a result
     @Test
     public void SumWithAssertionPositiveTest() {
         LoginScreen loginScreen = new LoginScreen();
@@ -121,6 +94,8 @@ public class FirstAndroidEspressoTest {
         CalculatorScreen calculatorScreen = new CalculatorScreen();
         calculatorScreen.SumWithAssertionPositive();
     }
+
+    // Assignment 6 - Make the previous test fail
     @Test
     public void SumWithAssertionNegativeTest() {
         LoginScreen loginScreen = new LoginScreen();
@@ -129,6 +104,18 @@ public class FirstAndroidEspressoTest {
         CalculatorScreen calculatorScreen = new CalculatorScreen();
         calculatorScreen.SumWithAssertionNegative();
     }
+
+    // Assignment 7 - Open the hamburger menu
+    @Test
+    public void OpenMenu() {
+        LoginScreen loginScreen = new LoginScreen();
+        loginScreen.login("admin","admin");
+
+        ViewInteraction menuButton = onView(withContentDescription("Open navigation drawer"));
+        menuButton.perform(click());
+    }
+
+    // Assignment 8 - Open WhatDoYouMeme menu item
     @Test
     public void OpenWhatDoYouMeme() {
         LoginScreen loginScreen = new LoginScreen();
@@ -138,8 +125,10 @@ public class FirstAndroidEspressoTest {
         menuButton.perform(click());
 
         MenuScreen menuScreen = new MenuScreen();
-        menuScreen.OpenWhatDoyouMeme();
+        menuScreen.OpenWhatDoYouMeme();
     }
+
+    // Assignment 9 - Open Slide show
     @Test
     public void OpenSlideShow() {
         LoginScreen loginScreen = new LoginScreen();
@@ -151,6 +140,8 @@ public class FirstAndroidEspressoTest {
         MenuScreen menuScreen = new MenuScreen();
         menuScreen.OpenSlideShow();
     }
+
+    // Assignment 10 - Scroll up and down on WhatDoYouMeme
     @Test
     public void ScrollWhatDoYouMeme() {
         LoginScreen loginScreen = new LoginScreen();
@@ -160,7 +151,7 @@ public class FirstAndroidEspressoTest {
         menuButton.perform(click());
 
         MenuScreen menuScreen = new MenuScreen();
-        menuScreen.OpenWhatDoyouMeme();
+        menuScreen.OpenWhatDoYouMeme();
 
         WhatDoYouMemeScreen whatDoYouMeme = new WhatDoYouMemeScreen();
         whatDoYouMeme.ScrollDown();

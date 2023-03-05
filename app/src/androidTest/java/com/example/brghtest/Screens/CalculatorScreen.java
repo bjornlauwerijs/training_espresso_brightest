@@ -2,6 +2,8 @@ package com.example.brghtest.Screens;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -10,7 +12,7 @@ import androidx.test.espresso.ViewInteraction;
 
 import com.example.brghtest.R;
 
-//Dit is de POM voor het CalculatorScreen
+// Page Object Model for "Calculator" screen
 public class CalculatorScreen {
 
     //selectors
@@ -34,15 +36,32 @@ public class CalculatorScreen {
     ViewInteraction buttonDot = onView(withId(R.id.buttonDot));
     ViewInteraction resultTextView = onView(withId(R.id.resultTextView));
 
-    public void RandomSubtract(){
+    public void RandomSubtract() {
         buttonSeven.perform(click());
         buttonSubtract.perform(click());
         buttonSix.perform(click());
         buttonEqual.perform(click());
     }
 
-    public void RandomSum() {
+    public void SumWithAssertionPositive() {
 
+        buttonSeven.perform(click());
+        buttonAdd.perform(click());
+        buttonSix.perform(click());
+        buttonEqual.perform(click());
+        resultTextView.check(matches(withText("7+6 = 13")));
+    }
+
+    public void SumWithAssertionNegative() {
+
+        buttonSeven.perform(click());
+        buttonAdd.perform(click());
+        buttonSix.perform(click());
+        buttonEqual.perform(click());
+        resultTextView.check(matches(withText("ThisWillThrowError")));
+    }
+
+    public void RandomSum() {
         buttonSeven.perform(click());
         buttonAdd.perform(click());
         buttonSix.perform(click());
@@ -64,23 +83,5 @@ public class CalculatorScreen {
         buttonMultiply.perform(click());
         buttonSix.perform(click());
         buttonEqual.perform(click());
-    }
-
-    public void SumWithAssertionPositive() {
-
-        buttonSeven.perform(click());
-        buttonAdd.perform(click());
-        buttonSix.perform(click());
-        buttonEqual.perform(click());
-        resultTextView.check(matches(withText("7+6 = 13")));
-    }
-
-    public void SumWithAssertionNegative() {
-
-        buttonSeven.perform(click());
-        buttonAdd.perform(click());
-        buttonSix.perform(click());
-        buttonEqual.perform(click());
-        resultTextView.check(matches(withText("ThisWillThrowError")));
     }
 }

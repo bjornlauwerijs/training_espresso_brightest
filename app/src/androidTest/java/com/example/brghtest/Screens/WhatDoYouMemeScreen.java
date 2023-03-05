@@ -9,9 +9,8 @@ import androidx.test.espresso.ViewInteraction;
 
 import com.example.brghtest.R;
 
-//Dit is de POM voor het WhatDoYouMeme scherm
+// Page Object Model for "WhatDoYouMeme" screen
 public class WhatDoYouMemeScreen {
-
     ViewInteraction scrollView = onView(withId(R.id.imageScrollView));
 
     public void ScrollDown(){

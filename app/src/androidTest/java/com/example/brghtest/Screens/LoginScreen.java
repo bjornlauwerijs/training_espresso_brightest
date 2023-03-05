@@ -10,9 +10,11 @@ import androidx.test.espresso.ViewInteraction;
 
 import com.example.brghtest.R;
 
-// Page object model for loginscreen
+// Page Object Model for "Login" screen
 public class LoginScreen {
-    //id kan je ophalen in activity_main.xml of via de layoutinspector
+
+    // You can find id by using layout inspector while running the app
+
     ViewInteraction emailtextField = onView(withId(R.id.usernameTextField));
     ViewInteraction passwordtextField = onView(withId(R.id.passwordTextField));
     ViewInteraction loginButton = onView(withId(R.id.loginButton));

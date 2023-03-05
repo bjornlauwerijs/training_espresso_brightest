@@ -10,12 +10,12 @@ import androidx.test.espresso.ViewInteraction;
 
 import com.example.brghtest.R;
 
-//Dit is de POM voor het menu
+// Page Object Model for main menu
 public class MenuScreen {
     ViewInteraction menuItemWhatDoYouMeme = onView(withText("What do you meme?"));
     ViewInteraction menuSlideshow = onView(withText("Slideshow"));
 
-    public void OpenWhatDoyouMeme(){
+    public void OpenWhatDoYouMeme(){
         menuItemWhatDoYouMeme.perform(click());
     }
     public void OpenSlideShow(){
