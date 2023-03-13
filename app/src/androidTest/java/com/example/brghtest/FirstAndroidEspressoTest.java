@@ -58,7 +58,6 @@ public class FirstAndroidEspressoTest {
         LoginScreen loginScreen = new LoginScreen();
         loginScreen.login("admin","admin");
 
-        //id kan je ophalen in activity_main.xml
         ViewInteraction buttonThree = onView(withId(R.id.buttonThree));
         buttonThree.perform(click());
 
@@ -128,7 +127,7 @@ public class FirstAndroidEspressoTest {
         menuScreen.OpenWhatDoYouMeme();
     }
 
-    // Assignment 9 - Open Slide show
+    // Assignment 9 - Open Slide show menu item
     @Test
     public void OpenSlideShow() {
         LoginScreen loginScreen = new LoginScreen();

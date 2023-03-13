@@ -12,8 +12,10 @@ import com.example.brghtest.R;
 
 // Page Object Model for main menu
 public class MenuScreen {
-    ViewInteraction menuItemWhatDoYouMeme = onView(withText("What do you meme?"));
-    ViewInteraction menuSlideshow = onView(withText("Slideshow"));
+    // ViewInteraction menuItemWhatDoYouMeme = onView(withText("What do you meme?"));
+    ViewInteraction menuItemWhatDoYouMeme = onView(withId(R.id.nav_gallery));
+    // ViewInteraction menuSlideshow = onView(withText("Slideshow"));
+    ViewInteraction menuSlideshow = onView(withId(R.id.nav_slideshow));
 
     public void OpenWhatDoYouMeme(){
         menuItemWhatDoYouMeme.perform(click());
