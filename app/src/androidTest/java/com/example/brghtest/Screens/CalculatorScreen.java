@@ -16,6 +16,7 @@ import com.example.brghtest.R;
 public class CalculatorScreen {
 
     //selectors
+    ViewInteraction buttonZero = onView(withId(R.id.buttonZero));
     ViewInteraction buttonOne = onView(withId(R.id.buttonOne));
     ViewInteraction buttonTwo = onView(withId(R.id.buttonTwo));
     ViewInteraction buttonThree = onView(withId(R.id.buttonThree));
@@ -61,6 +62,82 @@ public class CalculatorScreen {
         resultTextView.check(matches(withText("ThisWillThrowError")));
     }
 
+    public void Sum(int num1, int num2){
+        switch(num1) {
+            case 0:
+                buttonZero.perform(click());
+                break;
+            case 1:
+                buttonOne.perform(click());
+                break;
+            case 2:
+                buttonTwo.perform(click());
+                break;
+            case 3:
+                buttonThree.perform(click());
+                break;
+            case 4:
+                buttonFour.perform(click());
+                break;
+            case 5:
+                buttonFive.perform(click());
+                break;
+            case 6:
+                buttonSix.perform(click());
+                break;
+            case 7:
+                buttonSeven.perform(click());
+                break;
+            case 8:
+                buttonEight.perform(click());
+                break;
+            case 9:
+                buttonNine.perform(click());
+                break;
+            default:
+                break;
+        }
+        buttonAdd.perform(click());
+        switch(num2) {
+            case 0:
+                buttonZero.perform(click());
+                break;
+            case 1:
+                buttonOne.perform(click());
+                break;
+            case 2:
+                buttonTwo.perform(click());
+                break;
+            case 3:
+                buttonThree.perform(click());
+                break;
+            case 4:
+                buttonFour.perform(click());
+                break;
+            case 5:
+                buttonFive.perform(click());
+                break;
+            case 6:
+                buttonSix.perform(click());
+                break;
+            case 7:
+                buttonSeven.perform(click());
+                break;
+            case 8:
+                buttonEight.perform(click());
+                break;
+            case 9:
+                buttonNine.perform(click());
+                break;
+            default:
+                break;
+        }
+        int result = num1 + num2;
+        buttonEqual.perform(click());
+        resultTextView.check(matches(withText(num1+ "+" + num2+" = " + result)));
+    }
+
+    /*
     public void RandomSum() {
         buttonSeven.perform(click());
         buttonAdd.perform(click());
@@ -84,4 +161,5 @@ public class CalculatorScreen {
         buttonSix.perform(click());
         buttonEqual.perform(click());
     }
+    */
 }
