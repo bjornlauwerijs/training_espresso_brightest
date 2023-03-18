@@ -9,6 +9,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+import android.util.Log;
+
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -106,6 +108,8 @@ public class FirstAndroidEspressoTest {
         calculatorScreen.SumWithAssertionNegative();
     }
 
+    // Assignment 7 - Do an assertion in your test spec file
+
     // Assignment 7 - Open the hamburger menu
     @Test
     public void OpenMenu() {
@@ -167,5 +171,16 @@ public class FirstAndroidEspressoTest {
         CalculatorScreen calculatorScreen = new CalculatorScreen();
         calculatorScreen.RandomSum();
         calculatorScreen.getResult().check(matches(withText("7+6 = 13")));
+    }
+
+    @Test
+    public void HowToLog(){
+        LoginScreen loginScreen = new LoginScreen();
+        loginScreen.login("admin","admin");
+
+        // log a message
+        Log.d("TagToSortOn", "This is a log message");
+        Log.d("TagToSortOn", "Which appears in Logcat");
+        Log.d("TagToSortOn", "You can sort on the tag to quickly navigate to all log messages");
     }
 }
