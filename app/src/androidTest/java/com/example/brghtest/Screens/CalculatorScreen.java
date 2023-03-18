@@ -2,8 +2,6 @@ package com.example.brghtest.Screens;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -137,29 +135,16 @@ public class CalculatorScreen {
         resultTextView.check(matches(withText(num1+ "+" + num2+" = " + result)));
     }
 
-    /*
+
     public void RandomSum() {
         buttonSeven.perform(click());
         buttonAdd.perform(click());
         buttonSix.perform(click());
         buttonEqual.perform(click());
-        resultTextView.check(matches(withText("7+6 = 13")));
     }
 
-    public void RandomDivide() {
-
-        buttonSeven.perform(click());
-        buttonDivide.perform(click());
-        buttonSix.perform(click());
-        buttonEqual.perform(click());
+    public ViewInteraction getResult(){
+        return resultTextView;
     }
 
-    public void RandomMultiply() {
-
-        buttonSeven.perform(click());
-        buttonMultiply.perform(click());
-        buttonSix.perform(click());
-        buttonEqual.perform(click());
-    }
-    */
 }
