@@ -109,8 +109,18 @@ public class FirstAndroidEspressoTest {
     }
 
     // Assignment 7 - Do an assertion in your test spec file
+    @Test
+    public void AssertionThroughgetResult() {
+        LoginScreen loginScreen = new LoginScreen();
+        loginScreen.login("admin","admin");
 
-    // Assignment 7 - Open the hamburger menu
+        CalculatorScreen calculatorScreen = new CalculatorScreen();
+        calculatorScreen.RandomSum();
+        calculatorScreen.getResult().check(matches(withText("7+6 = 13")));
+    }
+
+
+    // Assignment 8 - Open the hamburger menu
     @Test
     public void OpenMenu() {
         LoginScreen loginScreen = new LoginScreen();
@@ -120,7 +130,7 @@ public class FirstAndroidEspressoTest {
         menuButton.perform(click());
     }
 
-    // Assignment 8 - Open WhatDoYouMeme menu item
+    // Assignment 9 - Open WhatDoYouMeme menu item
     @Test
     public void OpenWhatDoYouMeme() {
         LoginScreen loginScreen = new LoginScreen();
@@ -133,7 +143,7 @@ public class FirstAndroidEspressoTest {
         menuScreen.OpenWhatDoYouMeme();
     }
 
-    // Assignment 9 - Open Slide show menu item
+    // Assignment 10 - Open Slide show menu item
     @Test
     public void OpenSlideShow() {
         LoginScreen loginScreen = new LoginScreen();
@@ -146,7 +156,7 @@ public class FirstAndroidEspressoTest {
         menuScreen.OpenSlideShow();
     }
 
-    // Assignment 10 - Scroll up and down on WhatDoYouMeme
+    // Assignment 11 - Scroll up and down on WhatDoYouMeme
     @Test
     public void ScrollWhatDoYouMeme() {
         LoginScreen loginScreen = new LoginScreen();
@@ -161,16 +171,6 @@ public class FirstAndroidEspressoTest {
         WhatDoYouMemeScreen whatDoYouMeme = new WhatDoYouMemeScreen();
         whatDoYouMeme.ScrollDown();
         whatDoYouMeme.ScrollUp();
-    }
-
-    @Test
-    public void AssertionThroughgetResult() {
-        LoginScreen loginScreen = new LoginScreen();
-        loginScreen.login("admin","admin");
-
-        CalculatorScreen calculatorScreen = new CalculatorScreen();
-        calculatorScreen.RandomSum();
-        calculatorScreen.getResult().check(matches(withText("7+6 = 13")));
     }
 
     @Test
